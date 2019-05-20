@@ -28,6 +28,8 @@ Here are the differences:
 * Improved favicons with broader coverage
 * Updated manifest for PWA support
 * Switched to default browserslist config
+* Added lang attribute to html tag
+* Double quotes instead of single in html/svelte files
 
 
 ## Bugs and feedback
