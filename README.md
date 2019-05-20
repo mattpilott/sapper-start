@@ -27,6 +27,7 @@ Here are the differences:
 * Adds `numworker: 1` in rollup.config to prevent crash on servers with a single processor core
 * Improved favicons with broader coverage
 * Updated manifest for PWA support
+* Switched to default browserslist config
 
 
 ## Bugs and feedback
