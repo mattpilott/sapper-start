@@ -11,12 +11,11 @@
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
     "reload": "touch src/routes/_layout.svelte",
-    "openbrowser": "sleep 3; open http://localhost:3000",
     "scss": "node-sass -x -r --output-style compressed --output ./static/ ./static/",
     "autoprefixer": "postcss --use autoprefixer --replace ./static/global.css --no-map",
     "build:css": "npm run scss --silent && npm run autoprefixer --silent && npm run reload --silent",
     "watch:css": "onchange './static/**/*.scss' -- npm run build:css --silent",
-    "dev": "npm-run-all --parallel 'sapper' 'watch:css --silent' 'openbrowser'"
+    "dev": "npm-run-all --parallel 'sapper' 'watch:css --silent'"
   },
   "dependencies": {
     "@creativelittledots/reboot": "^1.4.0",

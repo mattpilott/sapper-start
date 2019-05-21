@@ -22,7 +22,6 @@ Good question, I found myself doing these changes on every project and thought I
 Here are the differences:
 * Removed default routes, components and emptied index & layout
 * SCSS support out-of-the-box
-* Open the browser automatically
 * Adds css reset based on normalize
 * Adds `numworker: 1` in rollup.config to prevent crash on servers with a single processor core
 * Improved favicons with broader coverage
