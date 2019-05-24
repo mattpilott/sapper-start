@@ -29,6 +29,7 @@ Here are the differences:
 * Switched to default browserslist config
 * Added lang attribute to html tag
 * Double quotes instead of single in html/svelte files
+* Ability to bypass relative paths with `~` eg. `import { util } from '~/utils.js';`
 
 
 ## Bugs and feedback
