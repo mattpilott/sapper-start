@@ -8,6 +8,8 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import sveltePreprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
+import alias from 'rollup-plugin-alias';
+import path from 'path';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -37,6 +39,10 @@ export default {
 			}),
 			resolve(),
 			commonjs(),
+            alias({
+                resolve: ['.js', '.mjs', '.html', '.svelte'],
+                '~': path.join(__dirname, './src')
+            }),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -72,7 +78,11 @@ export default {
                 preprocess
 			}),
 			resolve(),
-			commonjs()
+			commonjs(),
+            alias({
+                resolve: ['.js', '.mjs', '.html', '.svelte'],
+                '~': path.join(__dirname, './src')
+            }),
 		],
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
@@ -89,6 +99,10 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			commonjs(),
+            alias({
+                resolve: ['.js', '.mjs', '.html', '.svelte'],
+                '~': path.join(__dirname, './src')
+            }),
 			!dev && terser({numWorkers: 1})
 		]
 	}
