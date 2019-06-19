@@ -30,6 +30,7 @@ Here are the differences:
 * Added lang attribute to html tag
 * Double quotes instead of single in html/svelte files
 * Ability to bypass relative paths with `~` eg. `import { util } from '~/utils.js';`
+* Moves css import to client.js to prevent extraneous caching
 
 
 ## Bugs and feedback
