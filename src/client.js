@@ -1,6 +1,4 @@
 import '../static/global.css';
-import * as sapper from '@sapper/app';
+import { start } from '@sapper/app';
 
-sapper.start({
-	target: document.querySelector('#sapper')
-});
+start({ target: sapper });
