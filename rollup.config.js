@@ -16,11 +16,19 @@ const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const preprocess = sveltePreprocess({
-    transformers: {
-        scss: { sourceMap: false },
-        postcss: { plugins: [ autoprefixer ] }
-    }
+   transformers: {
+      scss: { sourceMap: false },
+      postcss: { plugins: [ autoprefixer ] }
+   }
 });
+
+const aliasconfig = {
+   resolve: ['.js', '.mjs', '.html', '.svelte'],
+   entries:[{
+      find:'~',
+      replacement: path.join(__dirname, './src')
+   }]
+};
 
 export default {
 	client: {
@@ -35,14 +43,11 @@ export default {
 				dev,
 				hydratable: true,
 				emitCss: true,
-                preprocess
+            preprocess
 			}),
 			resolve(),
 			commonjs(),
-            alias({
-                resolve: ['.js', '.mjs', '.html', '.svelte'],
-                '~': path.join(__dirname, './src')
-            }),
+         alias(aliasconfig),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -59,7 +64,7 @@ export default {
 
 			!dev && terser({
 				module: true,
-                numWorkers: 1
+            numWorkers: 1
 			})
 		],
 	},
@@ -75,14 +80,11 @@ export default {
 			svelte({
 				generate: 'ssr',
 				dev,
-                preprocess
+            preprocess
 			}),
 			resolve(),
 			commonjs(),
-            alias({
-                resolve: ['.js', '.mjs', '.html', '.svelte'],
-                '~': path.join(__dirname, './src')
-            }),
+         alias(aliasconfig),
 		],
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
@@ -99,10 +101,7 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			commonjs(),
-            alias({
-                resolve: ['.js', '.mjs', '.html', '.svelte'],
-                '~': path.join(__dirname, './src')
-            }),
+         alias(aliasconfig),
 			!dev && terser({numWorkers: 1})
 		]
 	}

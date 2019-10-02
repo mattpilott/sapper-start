@@ -35,8 +35,8 @@
     "onchange": "6.1.0",
     "postcss": "7.0.18",
     "postcss-cli": "6.1.3",
-    "rollup": "1.21.4",
-    "rollup-plugin-alias": "2.0.0",
+    "rollup": "1.22.0",
+    "rollup-plugin-alias": "2.0.1",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
@@ -44,8 +44,8 @@
     "rollup-plugin-svelte": "5.1.0",
     "rollup-plugin-terser": "5.1.2",
     "sapper": "0.27.9",
-    "sass": "^1.22.10",
+    "sass": "1.23.0",
     "svelte": "3.12.1",
-    "svelte-preprocess": "3.1.1"
+    "svelte-preprocess": "3.1.2"
   }
 }
