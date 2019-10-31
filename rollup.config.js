@@ -37,7 +37,8 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+            'pkg.version': JSON.stringify(pkg.version)
 			}),
 			svelte({
 				dev,
@@ -75,7 +76,8 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': false,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+            'pkg.version': JSON.stringify(pkg.version)
 			}),
 			svelte({
 				generate: 'ssr',
@@ -98,7 +100,8 @@ export default {
 			resolve(),
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+            'pkg.version': JSON.stringify(pkg.version)
 			}),
 			commonjs(),
          alias(aliasconfig),
