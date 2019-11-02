@@ -18,7 +18,7 @@
     "dev": "run-p 'sapper' 'watch:css'"
   },
   "dependencies": {
-    "@creativelittledots/reboot": "1.8.0",
+    "@neuekit/reboot": "^1.9.1",
     "compression": "^1.7.1",
     "polka": "^0.5.0",
     "sirv": "^0.4.0"
