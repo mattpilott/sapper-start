@@ -27,6 +27,17 @@ const aliasconfig = {
    entries:[{ find: '~', replacement: path.join(__dirname, './src') }]
 };
 
+const preprocess = [
+   scss({ sourceMap: false }),
+   postcss({ plugins: [ autoprefixer ] })
+];
+
+const replaceconfig = {
+   'process.browser': false,
+   'process.env.NODE_ENV': JSON.stringify(mode),
+   'pkg.version': JSON.stringify(pkg.version)
+};
+
 /* Config */
 export default {
 
@@ -37,20 +48,13 @@ export default {
 		plugins: [
          alias(aliasconfig),
          commonjs(),
-			replace({
-				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode),
-            'pkg.version': JSON.stringify(pkg.version)
-			}),
+			replace(replaceconfig),
          resolve({ browser: true, dedupe }),
 			svelte({
 				dev,
 				hydratable: true,
 				emitCss: true,
-            preprocess: [
-               scss({ sourceMap: false }),
-               postcss({ plugins: [ autoprefixer ] })
-            ]
+            preprocess
 			}),
 
 			legacy && babel({
@@ -66,10 +70,7 @@ export default {
             runtimeHelpers: true,
 			}),
 
-			!dev && terser({
-				module: true,
-            numWorkers: 1
-			})
+			!dev && terser({ module: true, numWorkers: 1 })
 		],
 	},
 
@@ -80,19 +81,12 @@ export default {
 		plugins: [
          alias(aliasconfig),
          commonjs(),
-			replace({
-				'process.browser': false,
-				'process.env.NODE_ENV': JSON.stringify(mode),
-            'pkg.version': JSON.stringify(pkg.version)
-			}),
+			replace({...replaceconfig, 'process.browser': false}),
          resolve({ dedupe }),
 			svelte({
             dev,
 				generate: 'ssr',
-            preprocess: [
-               scss({ sourceMap: false }),
-               postcss({ plugins: [ autoprefixer ] })
-            ]
+            preprocess
 			})
 		],
 		external: Object.keys(pkg.dependencies).concat(
@@ -107,13 +101,9 @@ export default {
 		plugins: [
          alias(aliasconfig),
          commonjs(),
-			replace({
-				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode),
-            'pkg.version': JSON.stringify(pkg.version)
-			}),
+			replace(replaceconfig),
          resolve(),
-			!dev && terser({numWorkers: 1})
+			!dev && terser({ numWorkers: 1 })
 		]
 	}
 };
