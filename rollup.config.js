@@ -20,7 +20,9 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
 const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
-const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
+const onwarn = (warning, onwarn) => {
+   (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
+};
 
 const aliasconfig = {
    resolve: ['.js', '.mjs', '.html', '.svelte', '.scss'],
