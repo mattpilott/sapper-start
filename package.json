@@ -18,7 +18,7 @@
     "dev": "run-p 'sapper' 'watch:css'"
   },
   "dependencies": {
-    "@neuekit/reboot": "1.9.3",
+    "@neuekit/reboot": "1.10.0",
     "compression": "1.7.4",
     "polka": "0.5.2",
     "sirv": "0.4.2"
@@ -36,7 +36,7 @@
     "onchange": "6.1.0",
     "postcss": "7.0.24",
     "postcss-cli": "6.1.3",
-    "rollup": "1.27.8",
+    "rollup": "1.27.9",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
