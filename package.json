@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@neuekit/reboot": "1.10.0",
+    "@neuekit/utilities": "1.0.0",
     "compression": "1.7.4",
     "polka": "0.5.2",
     "sirv": "0.4.2"
