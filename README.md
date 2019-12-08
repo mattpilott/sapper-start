@@ -14,6 +14,14 @@ Open up [localhost:3000](http://localhost:3000) and start clicking around.
 
 Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started with Sapper itself.
 
+<hr/>
+
+If you use this alot you can alias it like so:
+```
+alias sapper-start='npx degit https://github.com/matt3224/sapper-start .'
+```
+Then simply cd into your empty project directory and run `sapper-start`
+
 
 ## How does this differ from sapper-template?
 
