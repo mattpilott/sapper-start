@@ -1,4 +1,4 @@
-# sapper-start
+# Sapper Start
 
 An opinionated starter template based on the rollup [sapper-template](https://github.com/sveltejs/sapper-template/tree/rollup). To clone it and get started:
 
