@@ -1,6 +1,16 @@
-# Sapper Start
+![Hero](https://i.postimg.cc/1tpKKh7f/hero.png)
 
-An opinionated starter template based on the rollup [sapper-template](https://github.com/sveltejs/sapper-template/tree/rollup). To clone it and get started:
+<p align="center">
+  An opinionated starter template based on the Rollup Sapper template. 🚀
+</p>
+
+## Hello 👋,
+
+![GitHub release](https://img.shields.io/github/release/matt3224/sapper-start.svg?style=for-the-badge)
+
+The purpose of this repo was to save me time by doing all of the things I do on every Sapper project, but hey you might find it useful too right?!
+
+To clone it and get started:
 
 ```bash
 # for Rollup
