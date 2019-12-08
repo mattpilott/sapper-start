@@ -17,7 +17,7 @@ Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started 
 <hr/>
 
 If you use this alot you can alias it like so:
-```
+```bash
 alias sapper-start='npx degit https://github.com/matt3224/sapper-start .'
 ```
 Then simply cd into your empty project directory and run `sapper-start`
