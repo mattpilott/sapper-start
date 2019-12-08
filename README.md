@@ -39,6 +39,9 @@ Here are the differences:
 * Double quotes instead of single in html/svelte files
 * Ability to bypass relative paths with `~` eg. `import { util } from '~/utils.js';`
 * Moves css import to client.js to prevent extraneous caching
+* Adds a light suggested structure for library and component folders
+* Prints the package version in the html head as a meta tag
+* Adds an optional utility package (Tree-shaken so if you don't use it you don't get it)
 
 
 ## Bugs and feedback
