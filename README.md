@@ -1,4 +1,4 @@
-![Hero](https://i.postimg.cc/1tpKKh7f/hero.png)
+![Hero](https://i.postimg.cc/c494JK1L/hero.png)
 
 <p align="center">
   An opinionated starter template based on the Rollup Sapper template. 🚀
