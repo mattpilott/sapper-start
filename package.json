@@ -27,9 +27,9 @@
   "devDependencies": {
     "@babel/core": "7.7.5",
     "@babel/plugin-syntax-dynamic-import": "7.7.4",
-    "@babel/plugin-transform-runtime": "7.7.5",
-    "@babel/preset-env": "7.7.5",
-    "@babel/runtime": "7.7.5",
+    "@babel/plugin-transform-runtime": "7.7.6",
+    "@babel/preset-env": "7.7.6",
+    "@babel/runtime": "7.7.6",
     "@rollup/plugin-alias": "2.2.0",
     "@rollup/plugin-replace": "2.2.1",
     "autoprefixer": "9.7.3",
@@ -45,7 +45,7 @@
     "rollup-plugin-terser": "5.1.2",
     "sapper": "0.27.9",
     "sass": "1.23.7",
-    "svelte": "3.16.0",
+    "svelte": "3.16.3",
     "svelte-preprocess": "3.2.6"
   }
 }
