@@ -37,15 +37,15 @@
     "onchange": "6.1.0",
     "postcss": "7.0.24",
     "postcss-cli": "6.1.3",
-    "rollup": "1.27.9",
+    "rollup": "1.27.11",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-svelte": "5.1.1",
-    "rollup-plugin-terser": "5.1.2",
+    "rollup-plugin-terser": "5.1.3",
     "sapper": "0.27.9",
     "sass": "1.23.7",
-    "svelte": "3.16.3",
+    "svelte": "3.16.4",
     "svelte-preprocess": "3.2.6"
   }
 }
