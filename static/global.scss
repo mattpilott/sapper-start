@@ -1,16 +1,14 @@
 @import '../node_modules/@neuekit/reboot';
 
-html,
-body {
+html {
    font-family: -apple-system,
                 BlinkMacSystemFont,
-                'Segoe UI',
-                Helvetica
+                Segoe UI,
+                Helvetica,
                 Arial,
                 sans-serif,
-                'Apple Color Emoji',
-                'Segoe UI Emoji',
-                'Segoe UI Symbol';
+                Apple Color Emoji,
+                Segoe UI Emoji;
    -webkit-font-smoothing: antialiased;
 }
 
