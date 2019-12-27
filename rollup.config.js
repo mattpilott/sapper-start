@@ -25,7 +25,7 @@ const onwarn = (warning, onwarn) => {
 };
 
 const aliasconfig = {
-   resolve: ['.js', '.mjs', '.html', '.svelte', '.scss'],
+   customResolver: resolve({ extensions: ['.js', '.mjs', '.html', '.svelte', '.scss'] }),
    entries:[{ find: '~', replacement: path.join(__dirname, './src') }]
 };
 
