@@ -10,6 +10,7 @@ import { terser } from 'rollup-plugin-terser';
 /* Packages */
 import autoprefixer from 'autoprefixer';
 import config from 'sapper/config/rollup.js';
+import 'dotenv/config';
 import path from 'path';
 import pkg from './package.json';
 import { scss, postcss } from 'svelte-preprocess';
