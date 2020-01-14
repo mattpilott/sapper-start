@@ -23,11 +23,11 @@
     "sirv": "0.4.2"
   },
   "devDependencies": {
-    "@babel/core": "7.7.7",
-    "@babel/plugin-syntax-dynamic-import": "7.7.4",
-    "@babel/plugin-transform-runtime": "7.7.6",
-    "@babel/preset-env": "7.7.7",
-    "@babel/runtime": "7.7.7",
+    "@babel/core": "7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.8.3",
+    "@babel/preset-env": "7.8.3",
+    "@babel/runtime": "7.8.3",
     "@neuekit/reboot": "1.10.0",
     "@neuekit/utilities": "1.0.12",
     "@rollup/plugin-alias": "3.0.0",
@@ -46,7 +46,7 @@
     "rollup-plugin-terser": "5.2.0",
     "sapper": "0.27.9",
     "sass": "1.24.4",
-    "svelte": "3.16.7",
+    "svelte": "3.17.0",
     "svelte-preprocess": "3.3.0"
   }
 }
