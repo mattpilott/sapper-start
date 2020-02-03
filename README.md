@@ -16,7 +16,7 @@ To clone it and get started:
 # for Rollup
 npx degit matt3224/sapper-start my-app
 cd my-app
-npm install # or yarn!
+npm install
 npm run dev
 ```
 
