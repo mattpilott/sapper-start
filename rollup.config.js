@@ -20,7 +20,6 @@ const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
-const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
 const onwarn = (warning, onwarn) => {
    (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
 };
@@ -38,7 +37,7 @@ const preprocess = [
 const replaceconfig = {
    'process.browser': true,
    'process.env.NODE_ENV': JSON.stringify(mode),
-   'pkg.version': JSON.stringify(pkg.version)
+   'pkg.version': pkg.version
 };
 
 /* Config */
@@ -52,7 +51,7 @@ export default {
          alias(aliasconfig),
          commonjs(),
 			replace(replaceconfig),
-         resolve({ browser: true, dedupe }),
+         resolve({ browser: true, dedupe: ['svelte'] }),
 			svelte({
 				dev,
 				hydratable: true,
@@ -85,7 +84,7 @@ export default {
          alias(aliasconfig),
          commonjs(),
 			replace({...replaceconfig, 'process.browser': false}),
-         resolve({ dedupe }),
+         resolve({ dedupe: ['svelte'] }),
 			svelte({
             dev,
 				generate: 'ssr',

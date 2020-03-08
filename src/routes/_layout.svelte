@@ -1,13 +1,13 @@
 <svelte:head>
-   <meta name="version" content=pkg.version>
+   <meta name="version" content="pkg.version">
 </svelte:head>
 
 <main>
-	<slot></slot>
+	<slot {segment} />
 </main>
 
 <script>
-	//export let segment;
+	export let segment;
 </script>
 
 <style lang="scss">
