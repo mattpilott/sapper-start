@@ -26,7 +26,7 @@ Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started 
 
 <hr/>
 
-If you use this alot you can alias it like so:
+If you use this a lot you can alias it by putting this in your zshrc or bashrc:
 ```bash
 alias sapper-start='npx degit https://github.com/matt3224/sapper-start .'
 ```
@@ -38,20 +38,22 @@ Then simply cd into your empty project directory and run `sapper-start`
 Good question, I found myself doing these changes on every project and thought I'd save myself and you some time by making a little repo you could import just like the official sapper-template.
 
 Here are the differences:
-* Removed default routes, components and emptied index & layout
-* SCSS support out-of-the-box
+* Adds SCSS support out-of-the-box
 * Adds css reset based on normalize
 * Adds `numworker: 1` in rollup.config to prevent crash on servers with a single processor core
-* Improved favicons with broader coverage
-* Updated manifest for PWA support
-* Switched to default browserslist config
-* Added lang attribute to html tag
-* Double quotes instead of single in html/svelte files
-* Ability to bypass relative paths with `~` eg. `import { util } from '~/utils.js';`
-* Moves css import to client.js to prevent extraneous caching
 * Adds a light suggested structure for library and component folders
-* Prints the package version in the html head as a meta tag
 * Adds an optional utility package (Tree-shaken so if you don't use it you don't get it)
+* Adds the package version in the html head as a meta tag
+* Adds PWA support by default
+* Adds ability to bypass relative paths with `~` & auto resolves .js, .mjs, .html, .svelte, .scss
+   * eg. `import { util } from '~/utils';` instead of `import { util } from '../../utils.js';`
+
+* Changes global css link to a client.js import which prevents extraneous caching
+* Changes favicons with broader coverage
+* Changes single quotes to double in html/svelte files
+
+* Removed default routes, components and emptied index & layout
+* Removed custom browserslist config to use default
 
 
 ## Bugs and feedback
