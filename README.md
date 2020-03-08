@@ -47,13 +47,11 @@ Here are the differences:
 * Adds PWA support by default
 * Adds ability to bypass relative paths with `~` & auto resolves .js, .mjs, .html, .svelte, .scss
    * eg. `import { util } from '~/utils';` instead of `import { util } from '../../utils.js';`
-
 * Changes global css link to a client.js import which prevents extraneous caching
 * Changes favicons with broader coverage
 * Changes single quotes to double in html/svelte files
-
-* Removed default routes, components and emptied index & layout
-* Removed custom browserslist config to use default
+* Removes default routes, components and emptied index & layout
+* Removes custom browserslist config to use default
 
 
 ## Bugs and feedback
