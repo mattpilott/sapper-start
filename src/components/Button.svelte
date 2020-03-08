@@ -2,7 +2,7 @@
    <a {href} on:click>
       <slot />
    </a>
-{else:}
+{:else}
    <button on:click>
       <slot />
    </button>
