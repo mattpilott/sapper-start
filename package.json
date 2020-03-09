@@ -29,7 +29,7 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/runtime": "^7.8.7",
     "@neuekit/reboot": "1.10.0",
-    "@neuekit/utilities": "1.0.12",
+    "@neuekit/utilities": "1.1.1",
     "@rollup/plugin-alias": "2.2.0",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
