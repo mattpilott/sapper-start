@@ -45,6 +45,8 @@ Here are the differences:
 * Adds an optional utility package (Tree-shaken so if you don't use it you don't get it)
 * Adds the package version in the html head as a meta tag
 * Adds PWA support by default
+* Adds standard allow all robots.txt
+* Adds server.js middleware to redirect trailing slash urls to non trailing slash
 * Adds ability to bypass relative paths with `~` & auto resolves .js, .mjs, .html, .svelte, .scss
    * eg. `import { util } from '~/utils';` instead of `import { util } from '../../utils.js';`
 * Changes global css link to a client.js import which prevents extraneous caching
