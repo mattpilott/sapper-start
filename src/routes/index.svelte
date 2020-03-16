@@ -1,4 +1,4 @@
-<h1 style="position:fixed;width:100%;top:40vh;text-align:center">Sapper launched successfully! 🚀</h1>
+<h1 style="position:fixed;width:100%;top:calc(50vh - 22px);text-align:center">Sapper launched successfully! 🚀</h1>
 
 <script context="module">
 
