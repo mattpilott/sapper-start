@@ -24,8 +24,12 @@ const onwarn = (warning, onwarn) => {
    (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
 };
 
+const customResolver = resolve({
+  extensions: ['.js', '.mjs', '.html', '.svelte', '.scss', '.json']
+});
+
 const aliasconfig = {
-   resolve: ['.js', '.mjs', '.html', '.svelte', '.scss'],
+   customResolver,
    entries: [{ find: '~', replacement: path.join(__dirname, './src') }]
 };
 
@@ -50,6 +54,7 @@ export default {
 		plugins: [
          alias(aliasconfig),
          commonjs(),
+         customResolver,
 			replace(replaceconfig),
          resolve({ browser: true, dedupe: ['svelte'] }),
 			svelte({
@@ -83,6 +88,7 @@ export default {
 		plugins: [
          alias(aliasconfig),
          commonjs(),
+         customResolver,
 			replace({...replaceconfig, 'process.browser': false}),
          resolve({ dedupe: ['svelte'] }),
 			svelte({
@@ -103,6 +109,7 @@ export default {
 		plugins: [
          alias(aliasconfig),
          commonjs(),
+         customResolver,
 			replace(replaceconfig),
          resolve(),
 			!dev && terser({ numWorkers: 1 })
