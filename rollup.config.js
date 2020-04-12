@@ -25,7 +25,7 @@ const onwarn = (warning, onwarn) => {
 };
 
 const customResolver = resolve({
-  extensions: ['.js', '.mjs', '.html', '.svelte', '.scss', '.json']
+   extensions: ['.js', '.mjs', '.html', '.svelte', '.scss', '.json']
 });
 
 const aliasconfig = {
@@ -47,72 +47,72 @@ const replaceconfig = {
 /* Config */
 export default {
 
-	client: {
-		input: config.client.input(),
-		output: config.client.output(),
+   client: {
+      input: config.client.input(),
+      output: config.client.output(),
       onwarn,
-		plugins: [
+      plugins: [
          alias(aliasconfig),
          commonjs(),
          customResolver,
-			replace(replaceconfig),
+         replace(replaceconfig),
          resolve({ browser: true, dedupe: ['svelte'] }),
-			svelte({
-				dev,
-				hydratable: true,
-				emitCss: true,
+         svelte({
+            dev,
+            hydratable: true,
+            emitCss: true,
             preprocess
-			}),
+         }),
 
-			legacy && babel({
+         legacy && babel({
             exclude: ['node_modules/@babel/**'],
-				extensions: ['.js', '.mjs', '.html', '.svelte'],
-				plugins: [
-					'@babel/plugin-syntax-dynamic-import',
-					['@babel/plugin-transform-runtime', {
-						useESModules: true
-					}]
-				],
+            extensions: ['.js', '.mjs', '.html', '.svelte'],
+            plugins: [
+               '@babel/plugin-syntax-dynamic-import',
+               ['@babel/plugin-transform-runtime', {
+                  useESModules: true
+               }]
+            ],
             presets: [['@babel/preset-env']],
             runtimeHelpers: true,
-			}),
+         }),
 
-			!dev && terser({ module: true, numWorkers: 1 })
-		],
-	},
+         !dev && terser({ module: true, numWorkers: 1 })
+      ],
+   },
 
-	server: {
-		input: config.server.input(),
-		output: config.server.output(),
+   server: {
+      input: config.server.input(),
+      output: config.server.output(),
       onwarn,
-		plugins: [
+      plugins: [
          alias(aliasconfig),
          commonjs(),
          customResolver,
-			replace({...replaceconfig, 'process.browser': false}),
+         replace({...replaceconfig, 'process.browser': false}),
          resolve({ dedupe: ['svelte'] }),
-			svelte({
+         svelte({
             dev,
-				generate: 'ssr',
+            generate: 'ssr',
             preprocess
-			})
-		],
-		external: Object.keys(pkg.dependencies).concat(
-			require('module').builtinModules || Object.keys(process.binding('natives'))
-		),
-	},
+         })
+      ],
+      external: Object.keys(pkg.dependencies).concat(
+         require('module').builtinModules || Object.keys(process.binding('natives'))
+      )
+   },
 
-	serviceworker: {
-		input: config.serviceworker.input(),
-		output: config.serviceworker.output(),
+   serviceworker: {
+      input: config.serviceworker.input(),
+      output: config.serviceworker.output(),
       onwarn,
-		plugins: [
+      plugins: [
          alias(aliasconfig),
          commonjs(),
          customResolver,
-			replace(replaceconfig),
+         replace(replaceconfig),
          resolve(),
-			!dev && terser({ numWorkers: 1 })
-		]
-	}
+         !dev && terser({ numWorkers: 1 })
+      ]
+   }
 };
