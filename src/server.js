@@ -8,10 +8,10 @@ const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
 polka() // You can also use Express
-	.use(sanslash)
-	.use(
-		compression({ threshold: 0 }),
-		sirv('static', { dev }),
-		sapper.middleware()
-	)
-	.listen(PORT, err => err && console.log('error', err));
+   .use(sanslash)
+   .use(
+      compression({ threshold: 0 }),
+      sirv('static', { dev }),
+   sapper.middleware()
+   )
+   .listen(PORT, err => err && console.log('error', err));

@@ -3,11 +3,11 @@
 </svelte:head>
 
 <main>
-	<slot {segment} />
+   <slot {segment} />
 </main>
 
 <script>
-	export let segment;
+   export let segment;
 </script>
 
 <style lang="scss">
