@@ -1,6 +1,6 @@
 /* Rollup plugins */
 import alias from '@rollup/plugin-alias';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
@@ -74,11 +74,12 @@ export default {
                }]
             ],
             presets: [['@babel/preset-env']],
-            runtimeHelpers: true,
+            babelHelpers: 'runtime',
          }),
 
          !dev && terser({ module: true, numWorkers: 1 })
       ],
+      preserveEntrySignatures: 'strict'
    },
 
    server: {
