@@ -9,9 +9,7 @@ const dev = NODE_ENV === 'development';
 
 polka() // You can also use Express
    .use(sanslash)
-   .use(
-      compression({ threshold: 0 }),
-      sirv('static', { dev }),
-   sapper.middleware()
-   )
+   .use(compression({ threshold: 0 }))
+   .use(sirv('static', { dev }))
+   .use(sapper.middleware())
    .listen(PORT, err => err && console.log('error', err));
