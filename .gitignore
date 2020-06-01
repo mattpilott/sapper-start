@@ -5,3 +5,5 @@ yarn-error.log
 /__sapper__/
 pnpm-lock.yaml
 pnpm-debug.log
+.env
+.vscode
