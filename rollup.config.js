@@ -79,7 +79,7 @@ export default {
 
          !dev && terser({ module: true, numWorkers: 1 })
       ],
-      preserveEntrySignatures: 'strict'
+      preserveEntrySignatures: false
    },
 
    server: {
@@ -100,7 +100,8 @@ export default {
       ],
       external: Object.keys(pkg.dependencies).concat(
          require('module').builtinModules || Object.keys(process.binding('natives'))
-      )
+      ),
+      preserveEntrySignatures: 'strict'
    },
 
    serviceworker: {
@@ -114,6 +115,7 @@ export default {
          replace(replaceconfig),
          resolve(),
          !dev && terser({ numWorkers: 1 })
-      ]
+      ],
+      preserveEntrySignatures: false
    }
 };
