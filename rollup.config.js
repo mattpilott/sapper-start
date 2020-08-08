@@ -20,9 +20,10 @@ const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
-const onwarn = (warning, onwarn) => {
-   (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
-};
+const onwarn = (warning, onwarn) =>
+	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
+	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+	onwarn(warning);
 
 const customResolver = resolve({
    extensions: ['.js', '.mjs', '.html', '.svelte', '.scss', '.json']
@@ -95,6 +96,7 @@ export default {
          svelte({
             dev,
             generate: 'ssr',
+            hydratable: true,
             preprocess
          })
       ],
