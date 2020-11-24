@@ -60,8 +60,10 @@ export default {
          replace(replaceconfig),
          resolve({ browser: true, dedupe: ['svelte'] }),
          svelte({
-            dev,
-            hydratable: true,
+            compilerOptions: {
+               dev,
+               hydratable: true
+            },
             emitCss: true,
             preprocess
          }),
@@ -98,9 +100,11 @@ export default {
          replace({...replaceconfig, 'process.browser': false}),
          resolve({ dedupe: ['svelte'] }),
          svelte({
-            dev,
-            generate: 'ssr',
-            hydratable: true,
+            compilerOptions: {
+               dev,
+               generate: 'ssr',
+               hydratable: true
+            },
             preprocess
          }),
          url({
