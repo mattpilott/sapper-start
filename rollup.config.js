@@ -64,7 +64,6 @@ export default {
                dev,
                hydratable: true
             },
-            emitCss: true,
             preprocess
          }),
          url({
@@ -105,6 +104,7 @@ export default {
                generate: 'ssr',
                hydratable: true
             },
+            emitCss: false,
             preprocess
          }),
          url({

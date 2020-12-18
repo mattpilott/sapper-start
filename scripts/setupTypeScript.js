@@ -161,9 +161,8 @@ import typescript from '@rollup/plugin-typescript';
 			/input: config.serviceworker.input\(\)(?!\.replace)/,
 			`input: config.serviceworker.input().replace(/\\.js$/, '.ts')`
 		],
-		// Add preprocess to the svelte config, this is tricky because there's no easy signifier.
-		// Instead we look for 'hydratable: true,'
-		[/hydratable: true(?!,\n\s*preprocess)/g, 'hydratable: true,\n\t\t\t\tpreprocess: sveltePreprocess()'],
+		// Add preprocess
+		[/compilerOptions/g, 'preprocess: sveltePreprocess(),\n\t\t\t\tcompilerOptions'],
 		// Add TypeScript
 		[/commonjs\(\)(?!,\n\s*typescript)/g, 'commonjs(),\n\t\t\ttypescript({ sourceMap: dev })']
 	]);
@@ -227,7 +226,7 @@ function updateServiceWorker() {
 		[`fetchAndCache(request)`, `fetchAndCache(request: Request)`],
 		[`self.addEventListener('activate', event =>`, `self.addEventListener('activate', (event: ExtendableEvent) =>`],
 		[`self.addEventListener('install', event =>`, `self.addEventListener('install', (event: ExtendableEvent) =>`],
-		[`addEventListener('fetch', (event) =>`, `addEventListener('fetch', (event: FetchEvent) =>`],
+		[`addEventListener('fetch', event =>`, `addEventListener('fetch', (event: FetchEvent) =>`],
 	]);
 }
 
