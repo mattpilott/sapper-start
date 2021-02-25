@@ -41,9 +41,12 @@ const preprocess = [
 ];
 
 const replaceconfig = {
-   'process.browser': true,
-   'process.env.NODE_ENV': JSON.stringify(mode),
-   'pkg.version': pkg.version
+   preventAssignment: false,
+   values: {
+      'process.browser': true,
+      'process.env.NODE_ENV': JSON.stringify(mode),
+      'pkg.version': pkg.version
+   }
 };
 
 /* Config */
